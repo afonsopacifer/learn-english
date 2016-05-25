@@ -1,11 +1,10 @@
 CACHE MANIFEST
-# 2016-05-24:v2
+# 2016-05-24:v3
 
 index.html
 favicon.png
 assets/styles/style.css
 launcher-icon-1x.png
-audio-1.mp3
 
 NETWORK:
 *
