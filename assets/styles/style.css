@@ -1,5 +1,9 @@
 /** {border: 1px solid green;}*/
 
+* {
+  box-sizing: border-box;
+}
+
 /* global
 ======================= */
 body {
@@ -20,6 +24,7 @@ body {
 .btn {
   border: 1px solid #fff;
 }
+
 /* header
 ======================= */
 .header {
@@ -45,15 +50,32 @@ body {
   display: flex;
   flex-wrap: wrap;
   position: relative;
-  transition: transform .2s;
+  transform: translateX(0);
+  transition: .3s ease all;
+}
+
+@media (max-width: 800px) {
+  .switch {
+    transform: translateX(-100%);
+  }
 }
 
 .article-en {
   flex: 1;
+  padding: 0 10px;
 }
 
 .article-pt {
   width: 50%;
+  padding: 0 10px;
+  transform: translateX(0);
+  transition: .3s ease all;
+}
+
+@media (min-width: 800px) {
+  .show {
+    transform: translateX(100%);
+  }
 }
 
 @media (max-width: 800px) {
@@ -72,15 +94,4 @@ body {
   position: fixed;
   bottom: 0;
   width: 100%;
-}
-
-/* switch animations
-======================= */
-.show {animation: switch .2s linear forwards;}
-
-.hide {animation: switch .2s reverse linear forwards;}
-
-@keyframes switch {
-  0%   {transform: translateX(0%);}
-  100% {transform: translateX(-100%);}
 }

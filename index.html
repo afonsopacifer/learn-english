@@ -59,7 +59,7 @@
 
 
           <!-- Portuguese Text-->
-          <article class="article-pt">
+          <article class="article-pt" id="articlePt">
             <h1 class="text-heading-lv1">O sucesso vem da luta</h1>
 
             <p class="text-paragraph">
@@ -97,6 +97,7 @@
       <footer class="footer">
         <div class="container">
           <button class="btn" id="switchBtn">Switch</button>
+          <button class="btn" id="showBtn">Show</button>
         </div>
       </footer>
 
@@ -105,23 +106,23 @@
         var sectionText = document.getElementById('sectionText');
 
         switchBtn.addEventListener("click", function() {
-
-          if (sectionText.classList) {
-            sectionText.classList.toggle("show");
-          } else {
-            var classes = sectionText.className.split(' ');
-            var existingIndex = classes.indexOf("show");
-
-            if (existingIndex >= 0)
-              classes.splice(existingIndex, 1);
-            else
-              classes.push("show");
-
-            sectionText.className = classes.join(' ');
-          }
-
+            if(sectionText.classList.contains('switch')){
+              sectionText.classList.remove('switch');
+            } else {
+              sectionText.classList.add('switch');
+            }
         });
 
+        var showBtn = document.getElementById('showBtn');
+        var articlePt = document.getElementById('articlePt');
+
+        showBtn.addEventListener("click", function() {
+            if(articlePt.classList.contains('show')){
+              articlePt.classList.remove('show');
+            } else {
+              articlePt.classList.add('show');
+            }
+        });
       </script>
 
     </body>
